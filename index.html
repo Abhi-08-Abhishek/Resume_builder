@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <textarea id="summary" placeholder="Profile Summary"></textarea>
+
+            <div id="education-section">
+                <h3>Education</h3>
+                <div class="education-entry">
+                    <input type="text" placeholder="Degree" required>
+                    <input type="text" placeholder="Institution" required>
+                    <button type="button" class="remove-btn">Remove</button>
+                </div>
+                <button type="button" id="add-education">Add Education</button>
+            </div>
+
+            <div id="skills-section">
+                <h3>Skills</h3>
+                <label><input type="checkbox" value="HTML"> HTML</label>
+                <label><input type="checkbox" value="CSS"> CSS</label>
+                <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+                <label><input type="checkbox" value="React"> React</label>
+                <label><input type="checkbox" value="Node.js"> Node.js</label>
+            </div>
+
+            <div id="experience-section">
+                <h3>Experience</h3>
+                <div class="experience-entry">
+                    <input type="text" placeholder="Job Title" required>
+                    <input type="text" placeholder="Company" required>
+                    <button type="button" class="remove-btn">Remove</button>
+                </div>
+                <button type="button" id="add-experience">Add Experience</button>
+            </div>
+
+            <button type="button" id="clear-form">Clear</button>
+            <button type="button" id="download-resume">Download PDF</button>
+        </form>
+
+        <div id="resume-preview">
+            <h2>Resume Preview</h2>
+            <div id="preview-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
